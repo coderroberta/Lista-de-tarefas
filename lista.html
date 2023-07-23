@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" type="text/css" href="style.css" >
+    <style> 
+    body {
+
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 20px;
+        
+    }
+    
+    h1 {
+        text-align: center;
+    }
+
+    input[type="text"] {
+        padding: 5px;
+        width: 300px;
+    }
+
+    button {
+        padding: 5px 10px;
+    }
+
+    ul {
+        list-style-type: nome;
+        padding: 0;
+
+    }
+    </style>
+</head>
+<body> 
+    <h1>Lista de Tarefas</h1>
+    <input id="taskInput" type="text" placeholder="adicionar">
+    <button id="addTaskButton">adicionar</button>
+    <ul id="talklist" ></ul>
+
+    <script src="script.js"></script>
+</body>
+</html>
