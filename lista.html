@@ -158,32 +158,7 @@ a.addEventListener('mouseout', sair)
     }
 </script>
 
-function addTask() {
-    const taskInput = document.getElementById("taskInput");
-    const taskList = document.getElementById("taskList");
-  
-    if (taskInput.value.trim() === "") {
-      alert("Digite uma tarefa válida!");
-      return;
-    }
-  
-    const li = document.createElement("li");
-    const span = document.createElement("span");
-    const deleteButton = document.createElement("button");
-  
-    span.textContent = taskInput.value;
-    deleteButton.textContent = "X";
-    deleteButton.addEventListener("click", function () {
-      taskList.removeChild(li);
-    });
-  
-    li.appendChild(span);
-    li.appendChild(deleteButton);
-    taskList.appendChild(li);
-  
-    taskInput.value = "";
-  }
-  
+
 
     <script src="script.js"></script>
 </body>
