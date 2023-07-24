@@ -4,8 +4,105 @@
     <meta charset="UTF-8">
     <title>Lista de Tarefas</title>
     <link rel="stylesheet" type="text/css" href="style.css" >
-    <style> 
+</head> 
+<body>
+   <div class="container">
+    <h1>Lista de Tarefas</h1>
+    <div class="task-form">
+        <input type="text" id="taskInput" placeholder="digite uma tarefa...">
+        <button onclick="addTask()">Addicionar</button>
+   </div>
+   <ul id="taskList">
+   </ul>
+
+
+</body>  
     
+    <style> 
+
+       
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+}
+
+.task-form {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.task-form input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.task-form button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.task-form button:hover {
+  background-color: #0056b3;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li span {
+  flex: 1;
+}
+
+li button {
+  margin-left: 10px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+li button:hover {
+  background-color: #c82333;
+}
+
     body {
 
         font-family: Arial, Helvetica, sans-serif;
@@ -61,11 +158,32 @@ a.addEventListener('mouseout', sair)
     }
 </script>
 
-
-    
-    <input id="taskInput" type="text" placeholder="adicionar">
-    <button id="addTaskButton">adicionar</button>
-    <ul id="talklist" ></ul>
+function addTask() {
+    const taskInput = document.getElementById("taskInput");
+    const taskList = document.getElementById("taskList");
+  
+    if (taskInput.value.trim() === "") {
+      alert("Digite uma tarefa válida!");
+      return;
+    }
+  
+    const li = document.createElement("li");
+    const span = document.createElement("span");
+    const deleteButton = document.createElement("button");
+  
+    span.textContent = taskInput.value;
+    deleteButton.textContent = "X";
+    deleteButton.addEventListener("click", function () {
+      taskList.removeChild(li);
+    });
+  
+    li.appendChild(span);
+    li.appendChild(deleteButton);
+    taskList.appendChild(li);
+  
+    taskInput.value = "";
+  }
+  
 
     <script src="script.js"></script>
 </body>
